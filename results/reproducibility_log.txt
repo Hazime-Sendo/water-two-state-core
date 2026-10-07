@@ -1,11 +1,11 @@
 Reproducibility log -- water-two-state-core
-Date (UTC) : 2026-10-06 00:36:23
+Date (UTC) : 2026-10-07 01:10:36
 Python     : 3.11.15 on Linux x86_64
 numpy      : 2.4.4
 scipy      : 1.17.1
 iapws      : 1.5.5
 
-Compared 52 values; mismatches: 0
+Compared 97 values; mismatches: 0
 tmd_rms_K            = 0.636 K
 widom_max_abs_diff_K = 0.36 K
 RESULT: REPRODUCED

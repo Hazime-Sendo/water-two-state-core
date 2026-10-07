@@ -352,6 +352,38 @@ def check_death_line():
         print(f"{P:8.1f} {ks[i]:13.3e} {Ts[i]:13.1f} {('none' if t_neg is None else '%.1f' % t_neg):>24}")
     return rows
 
+
+# ---------------------------------------------------------------------------
+# 7. Absolute magnitude of kappa_T vs IAPWS-95 (added in v1.1.0)
+# ---------------------------------------------------------------------------
+
+def check_kappaT_absolute():
+    """Compare the model's isothermal compressibility with IAPWS-95 in
+    absolute units (1/MPa). Checks 1 and 4 only locate extrema; this check
+    shows how large kappa_T is. The model kappa_T falls increasingly below
+    the reference with pressure (see README, Known limitations)."""
+    from model_final import kappa_T
+    print()
+    print("=" * 72)
+    print("7. kappa_T absolute magnitude vs IAPWS-95 (1/MPa)")
+    print("=" * 72)
+    print(f"{'T (K)':>6} {'P (MPa)':>8} {'model kT':>11} {'IAPWS-95 kT':>12} {'ratio':>7}")
+    rows = []
+    for P in (0.1, 50.0, 100.0):
+        for T in (260.0, 280.0, 300.0):
+            k_ref = IAPWS95(T=T, P=P).kappa
+            k_mod = float(kappa_T(T, P))
+            rows.append({"T_K": T, "P_MPa": P, "kappaT_model": k_mod,
+                         "kappaT_iapws95": float(k_ref), "ratio": k_mod / float(k_ref)})
+            print(f"{T:6.0f} {P:8.1f} {k_mod:11.3e} {float(k_ref):12.3e} {k_mod / float(k_ref):7.2f}")
+    r100 = [r["ratio"] for r in rows if r["P_MPa"] == 100.0]
+    r50 = [r["ratio"] for r in rows if r["P_MPa"] == 50.0]
+    print(f"\nratio (model/IAPWS-95) at 50 MPa : {min(r50):.2f}-{max(r50):.2f}")
+    print(f"ratio (model/IAPWS-95) at 100 MPa: {min(r100):.2f}-{max(r100):.2f}")
+    print("The model kappa_T is far too small at high pressure; the kappa_S")
+    print("boundary of check 6 is a symptom (negative linear HDL coefficient).")
+    return rows
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -375,6 +407,7 @@ if __name__ == "__main__":
     results["rho_abs_rms_pct"] = rho_rms_pct
     results["Cp_abs_rms_pct"] = cp_rms_pct
     results["death_line"] = check_death_line()
+    results["kappaT_abs"] = check_kappaT_absolute()
 
     print()
     print("=" * 72)
@@ -403,6 +436,7 @@ if __name__ == "__main__":
                 "rho_abs_rms_pct": results["rho_abs_rms_pct"],
                 "Cp_abs_rms_pct": results["Cp_abs_rms_pct"],
                 "death_line": results["death_line"],
+                "kappaT_abs": results["kappaT_abs"],
             },
             f,
             indent=2,
