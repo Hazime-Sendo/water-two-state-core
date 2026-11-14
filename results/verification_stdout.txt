@@ -30,7 +30,7 @@ Max |diff| across the 3 independent anchors: 0.36 K
 (Authoritative value: state 'within 0.4 K', not 'within 0.3 K' --
  the Holten & Anisimov anchor point alone differs by ~0.36 K.)
 The Mishima (2010) anchor (223.0 K @ 50 MPa) has been confirmed by
-the submission agent directly against the original paper.
+the author directly against the original paper.
 
 ========================================================================
 3. Thermodynamic stability scan: kappa_T > 0 and Cp > 0 everywhere

@@ -5,8 +5,7 @@
 verify_model.py
 ================
 Standalone numerical verification script for the extended two-state
-free-energy landscape model of water (Hazime Sendo / independent research,
-submission agent: Ken Yumoto).
+free-energy landscape model of water (Hazime Sendo / independent research).
 
 This script reproduces, from the model definition in `model_final.py` alone,
 every quantitative claim made in the manuscript and in the accompanying
@@ -56,7 +55,7 @@ Provenance / review notes (please read before citing the printed numbers)
 * Mishima (2010) anchor point (223 K, 50 MPa): CONFIRMED against the
   original paper (Mishima, "Volume of supercooled water under pressure and
   the liquid-liquid critical point", J. Chem. Phys. 133, 144503, 2010) by
-  the submission agent, who has direct access to it. That paper reports
+  the author. That paper reports
   volume measurements on emulsified water samples over ~200-275 K and
   ~40-400 MPa, finds a slight downward curvature in volume-vs-temperature
   above ~200 MPa consistent with the liquid-liquid critical point
@@ -210,7 +209,7 @@ def check_widom():
     print("(Authoritative value: state 'within 0.4 K', not 'within 0.3 K' --")
     print(" the Holten & Anisimov anchor point alone differs by ~0.36 K.)")
     print("The Mishima (2010) anchor (223.0 K @ 50 MPa) has been confirmed by")
-    print("the submission agent directly against the original paper.")
+    print("the author directly against the original paper.")
     return max_abs_diff
 
 
