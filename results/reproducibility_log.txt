@@ -1,5 +1,5 @@
 Reproducibility log -- water-two-state-core
-Date (UTC) : 2026-11-14 01:32:10
+Date (UTC) : 2026-11-19 23:26:14
 Python     : 3.13.18 on Linux x86_64
 numpy      : 2.4.4
 scipy      : 1.17.1

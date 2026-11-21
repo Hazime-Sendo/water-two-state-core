@@ -1,0 +1,362 @@
+{
+  "tolerances": {
+    "params": 0.0,
+    "TMD_RMS_K": 0.005,
+    "widom_K": 0.03,
+    "line_K": 0.06,
+    "json_K": 0.1
+  },
+  "n": 58,
+  "n_pass": 58,
+  "results": [
+    {
+      "item": "param dH0",
+      "pass": true,
+      "recomputed": -6731.97,
+      "expected": -6731.97
+    },
+    {
+      "item": "param dS0",
+      "pass": true,
+      "recomputed": -33.2262,
+      "expected": -33.2262
+    },
+    {
+      "item": "param dCp0",
+      "pass": true,
+      "recomputed": 600.521,
+      "expected": 600.521
+    },
+    {
+      "item": "param DV0",
+      "pass": true,
+      "recomputed": 23.3507,
+      "expected": 23.3507
+    },
+    {
+      "item": "param aL",
+      "pass": true,
+      "recomputed": -0.000106576,
+      "expected": -0.000106576
+    },
+    {
+      "item": "param aH",
+      "pass": true,
+      "recomputed": 0.000314402,
+      "expected": 0.000314402
+    },
+    {
+      "item": "param kT_LDL",
+      "pass": true,
+      "recomputed": 0.000753251,
+      "expected": 0.000753251
+    },
+    {
+      "item": "param kT2_LDL",
+      "pass": true,
+      "recomputed": 1.20121e-06,
+      "expected": 1.20121e-06
+    },
+    {
+      "item": "param kT_HDL",
+      "pass": true,
+      "recomputed": -8.27783e-05,
+      "expected": -8.27783e-05
+    },
+    {
+      "item": "param kT2_HDL",
+      "pass": true,
+      "recomputed": 1.99779e-07,
+      "expected": 1.99779e-07
+    },
+    {
+      "item": "param A1",
+      "pass": true,
+      "recomputed": 7.8542e-07,
+      "expected": 7.8542e-07
+    },
+    {
+      "item": "param A2",
+      "pass": true,
+      "recomputed": 1.1821e-06,
+      "expected": 1.1821e-06
+    },
+    {
+      "item": "param P1",
+      "pass": true,
+      "recomputed": 38.4215,
+      "expected": 38.4215
+    },
+    {
+      "item": "param P2",
+      "pass": true,
+      "recomputed": 118.563,
+      "expected": 118.563
+    },
+    {
+      "item": "TMD RMS (11 P, vs IAPWS-95)",
+      "pass": true,
+      "recomputed": 0.6358623010188269,
+      "expected": 0.636
+    },
+    {
+      "item": "Widom model value 0.1 MPa",
+      "pass": true,
+      "recomputed": 228.95734845749692,
+      "expected": 228.96
+    },
+    {
+      "item": "Widom model value 13.0 MPa",
+      "pass": true,
+      "recomputed": 227.35792306086705,
+      "expected": 227.36
+    },
+    {
+      "item": "Widom model value 50.0 MPa",
+      "pass": true,
+      "recomputed": 222.81724623051963,
+      "expected": 222.82
+    },
+    {
+      "item": "TMD @ 0.1 MPa",
+      "pass": true,
+      "recomputed": 275.9083092343678,
+      "expected": 275.9
+    },
+    {
+      "item": "TMD @ 25.0 MPa",
+      "pass": true,
+      "recomputed": 271.577078989632,
+      "expected": 271.6
+    },
+    {
+      "item": "TMD @ 50.0 MPa",
+      "pass": true,
+      "recomputed": 266.18611224350684,
+      "expected": 266.2
+    },
+    {
+      "item": "TMD @ 75.0 MPa",
+      "pass": true,
+      "recomputed": 259.8107974220127,
+      "expected": 259.8
+    },
+    {
+      "item": "TMD @ 100.0 MPa",
+      "pass": true,
+      "recomputed": 252.71438256615133,
+      "expected": 252.7
+    },
+    {
+      "item": "kT_peak @ 0.1 MPa",
+      "pass": true,
+      "recomputed": 224.41242706552597,
+      "expected": 224.4
+    },
+    {
+      "item": "kT_peak @ 25.0 MPa",
+      "pass": true,
+      "recomputed": 219.8767445965615,
+      "expected": 219.9
+    },
+    {
+      "item": "kT_peak @ 50.0 MPa",
+      "pass": true,
+      "recomputed": 215.41708524418948,
+      "expected": 215.4
+    },
+    {
+      "item": "kT_peak @ 75.0 MPa",
+      "pass": true,
+      "recomputed": 210.96192504130337,
+      "expected": 211.0
+    },
+    {
+      "item": "kT_peak @ 100.0 MPa",
+      "pass": true,
+      "recomputed": 206.38668055478539,
+      "expected": 206.4
+    },
+    {
+      "item": "Cp_peak @ 0.1 MPa",
+      "pass": true,
+      "recomputed": 228.2083865884011,
+      "expected": 228.2
+    },
+    {
+      "item": "Cp_peak @ 25.0 MPa",
+      "pass": true,
+      "recomputed": 225.121803646999,
+      "expected": 225.1
+    },
+    {
+      "item": "Cp_peak @ 50.0 MPa",
+      "pass": true,
+      "recomputed": 222.08156258640193,
+      "expected": 222.1
+    },
+    {
+      "item": "Cp_peak @ 75.0 MPa",
+      "pass": true,
+      "recomputed": 219.10641885698985,
+      "expected": 219.1
+    },
+    {
+      "item": "Cp_peak @ 100.0 MPa",
+      "pass": true,
+      "recomputed": 216.20031789198572,
+      "expected": 216.2
+    },
+    {
+      "item": "c_min @ 0.1 MPa",
+      "pass": true,
+      "recomputed": 206.69045640534017,
+      "expected": 206.7
+    },
+    {
+      "item": "c_min @ 25.0 MPa",
+      "pass": true,
+      "recomputed": 204.07777937279127,
+      "expected": 204.1
+    },
+    {
+      "item": "c_min @ 50.0 MPa",
+      "pass": true,
+      "recomputed": 201.48995491321165,
+      "expected": 201.5
+    },
+    {
+      "item": "c_min @ 75.0 MPa",
+      "pass": true,
+      "recomputed": 198.8361363490104,
+      "expected": 198.8
+    },
+    {
+      "item": "c_min @ 100.0 MPa",
+      "pass": true,
+      "recomputed": 195.980764061357,
+      "expected": 196.0
+    },
+    {
+      "item": "committed table TMD @ 0.1",
+      "pass": true,
+      "recomputed": 275.9083092343678,
+      "expected": 275.90829638724784
+    },
+    {
+      "item": "committed table kT_peak @ 0.1",
+      "pass": true,
+      "recomputed": 224.41242706552597,
+      "expected": 224.41235795933244
+    },
+    {
+      "item": "committed table Cp_peak @ 0.1",
+      "pass": true,
+      "recomputed": 228.2083865884011,
+      "expected": 228.20841584451009
+    },
+    {
+      "item": "committed table c_min @ 0.1",
+      "pass": true,
+      "recomputed": 206.69045640534017,
+      "expected": 206.69051432308888
+    },
+    {
+      "item": "committed table TMD @ 25.0",
+      "pass": true,
+      "recomputed": 271.577078989632,
+      "expected": 271.5770732512982
+    },
+    {
+      "item": "committed table kT_peak @ 25.0",
+      "pass": true,
+      "recomputed": 219.8767445965615,
+      "expected": 219.87672726769443
+    },
+    {
+      "item": "committed table Cp_peak @ 25.0",
+      "pass": true,
+      "recomputed": 225.121803646999,
+      "expected": 225.1218389918743
+    },
+    {
+      "item": "committed table c_min @ 25.0",
+      "pass": true,
+      "recomputed": 204.07777937279127,
+      "expected": 204.07780150018672
+    },
+    {
+      "item": "committed table TMD @ 50.0",
+      "pass": true,
+      "recomputed": 266.18611224350684,
+      "expected": 266.18609679698
+    },
+    {
+      "item": "committed table kT_peak @ 50.0",
+      "pass": true,
+      "recomputed": 215.41708524418948,
+      "expected": 215.41699504501443
+    },
+    {
+      "item": "committed table Cp_peak @ 50.0",
+      "pass": true,
+      "recomputed": 222.08156258640193,
+      "expected": 222.08158410001406
+    },
+    {
+      "item": "committed table c_min @ 50.0",
+      "pass": true,
+      "recomputed": 201.48995491321165,
+      "expected": 201.4898048547748
+    },
+    {
+      "item": "committed table TMD @ 75.0",
+      "pass": true,
+      "recomputed": 259.8107974220127,
+      "expected": 259.810777353622
+    },
+    {
+      "item": "committed table kT_peak @ 75.0",
+      "pass": true,
+      "recomputed": 210.96192504130337,
+      "expected": 210.96200800937928
+    },
+    {
+      "item": "committed table Cp_peak @ 75.0",
+      "pass": true,
+      "recomputed": 219.10641885698985,
+      "expected": 219.1063943471686
+    },
+    {
+      "item": "committed table c_min @ 75.0",
+      "pass": true,
+      "recomputed": 198.8361363490104,
+      "expected": 198.83621107109346
+    },
+    {
+      "item": "committed table TMD @ 100.0",
+      "pass": true,
+      "recomputed": 252.71438256615133,
+      "expected": 252.714362297483
+    },
+    {
+      "item": "committed table kT_peak @ 100.0",
+      "pass": true,
+      "recomputed": 206.38668055478539,
+      "expected": 206.38684242992446
+    },
+    {
+      "item": "committed table Cp_peak @ 100.0",
+      "pass": true,
+      "recomputed": 216.20031789198572,
+      "expected": 216.20030074852224
+    },
+    {
+      "item": "committed table c_min @ 100.0",
+      "pass": true,
+      "recomputed": 195.980764061357,
+      "expected": 195.98084315059234
+    }
+  ],
+  "figure_data_note": "figure1_anomaly_lines.png is a raster image; its plotted curves are the same four-line quantities checked above (no separate numeric figure table exists)."
+}

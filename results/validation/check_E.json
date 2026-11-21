@@ -1,0 +1,17 @@
+{
+  "grid": "T 180-400 K step 1; P 0-100 MPa step 2.5",
+  "n_points": 9061,
+  "n_kT_nonpositive": 0,
+  "n_Cp_nonpositive": 0,
+  "n_kS_nonpositive": 23,
+  "kS_nonpositive_P_range_MPa": [
+    100.0,
+    100.0
+  ],
+  "kS_nonpositive_T_range_K": [
+    278.0,
+    300.0
+  ],
+  "kS_min_positive_for_P_le_97.5": 1.4653018724990407e-07,
+  "interpretation": "Positivity of kT and Cp on this grid is a necessary-condition scan, not a proof of a stable thermodynamically consistent EOS (see check C). kS<=0 occurs only near 100 MPa at high T."
+}

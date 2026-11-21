@@ -5,8 +5,17 @@
 # density, isothermal compressibility, isobaric heat capacity, and sound
 # speed anomalies across 0-100 MPa. See the accompanying manuscript and
 # verify_model.py for the physical model definition, parameter provenance,
-# and numerical verification against IAPWS-95 and independent literature
-# estimates of the structural-fluctuation (Widom-line) maximum.
+# and numerical verification against IAPWS-95 and literature estimates of the
+# structural-fluctuation (Widom-line) maximum.
+#
+# MODEL CONSTRUCTION (clarification added in v1.1.2-candidate; no logic change):
+#   * DeltaG(T,P) fixes the LDL fraction x(T,P). Its volume term P*DeltaV(P) and
+#     its heat-capacity term dCp0 are specified separately from the pure-structure
+#     specific volumes Vm_LDL/Vm_HDL (cm^3/g) and heat capacities Cp_LDL/Cp_HDL.
+#     The model is therefore phenomenological: (dG/dP)_T is NOT constrained to
+#     equal M*(V_LDL - V_HDL), and dCp0 is NOT constrained to the pure-structure
+#     Cp difference (see validation/check_C_consistency.py).
+#   * Vm_* are specific volumes in cm^3/g (not molar volumes); rho is in g/cm^3.
 
 import numpy as np
 
@@ -19,7 +28,10 @@ w1, w2 = 20.0, 40.0
 Vm_LDL0 = 1.0/0.930
 Vm_HDL0 = 1.0/1.054
 
-# Final stability-constrained joint-fit parameters (established earlier in this project)
+# Ten fitted parameters below (dH0 ... kT2_HDL). A1, A2, P1, P2 above are held fixed
+# in this optimization; their origin and fitting objective are NOT documented in the
+# available project files (see docs/PROVENANCE.md). The original wording here was
+# "joint-fit parameters (established earlier in this project)".
 dH0, dS0, dCp0, DV0 = -6731.97, -33.2262, 600.521, 23.3507
 aL, aH = -1.06576e-04, 3.14402e-04
 kT_LDL, kT2_LDL = 7.53251e-04, 1.20121e-06

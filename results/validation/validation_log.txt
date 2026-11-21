@@ -1,0 +1,14 @@
+water-two-state-core validation log
+UTC: 2026-11-19 23:26:10
+env: {'python': '3.13.18', 'platform': 'Linux-6.18.44-fc-v653-x86_64-with-glibc2.39', 'numpy': '2.4.4', 'scipy': '1.17.1', 'randomness': 'none (deterministic grid evaluation)', 'iapws': '1.5.5'}
+
+A: max |extremum shift| A1=A2=0: 0.0000 K; DeltaV max abs diff 1.809e-06 cm3/mol (rel 7.7e-08); DeltaG max abs diff 7.644e-05 J/mol
+B: current       TMD(0.1MPa)=275.91 K RMS=0.636 K
+B: aL->-aL       TMD(0.1MPa)=273.71 K RMS=2.602 K
+B: aH->-aH       TMD(0.1MPa)=296.36 K RMS=34.936 K
+B: both flipped  TMD(0.1MPa)=293.23 K RMS=34.082 K
+B: aL=aH=0       TMD(0.1MPa)=284.36 K RMS=18.097 K
+C: dG/dP 23.35..23.35 vs M(VL-VH) 0.68..2.60 cm3/mol; |ratio| 9.0..34.4; dCp0 ratio 29.4..42.5; NOT self-consistent (phenomenological model)
+D: 58/58 regression items passed
+E: 9061 pts; kT<=0 0; Cp<=0 0; kS<=0 23 (P [100.0, 100.0], T [278.0, 300.0])
+OVERALL: PASS (regression)

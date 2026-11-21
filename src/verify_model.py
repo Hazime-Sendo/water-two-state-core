@@ -13,7 +13,7 @@ every quantitative claim made in the manuscript and in the accompanying
 
   1. TMD(P) vs. the IAPWS-95 reference formulation (0-100 MPa), RMS error.
   2. Widom-line (order-parameter susceptibility |dx/dT| maximum) comparison
-     against three independent literature anchor points (Kim et al. 2017;
+     against three literature reference temperatures (Kim et al. 2017;
      Holten & Anisimov 2012; Mishima 2010).
   3. A thermodynamic-stability grid scan confirming kappa_T > 0 and Cp > 0
      everywhere tested.
@@ -44,18 +44,22 @@ Provenance / review notes (please read before citing the printed numbers)
   liquid-liquid separation in supercooled water", Sci. Rep. 2, 713 (2012),
   which states verbatim: "The best fit for the critical point is obtained
   at about 227 K and 13 MPa." Do NOT confuse this with Holten, Bertrand,
-  Anisimov & Sengers, "Thermodynamics of supercooled water" (J. Chem.
-  Phys. 2014; arXiv:1111.5587), a different, later paper by an overlapping
-  author list that reports different critical-point estimates (~224 K /
-  27.5 MPa for their "Model IV"; ~214 K / 57 MPa for an extended model).
-  An external reviewer flagged an apparent mismatch by checking the wrong
-  (2014) paper against this (2012) citation -- the 13 MPa / 227 K value
-  used here is correct for the paper actually cited.
+  Anisimov & Sengers, "Thermodynamics of supercooled water"
+  (arXiv:1111.5587), a different paper by an overlapping author list that
+  reports different critical-point estimates (~224 K / 27.5 MPa for their
+  "Model IV"; ~214 K / 57 MPa for an extended model; values as noted
+  earlier in the project, not re-checked in v1.1.2). An external reviewer
+  flagged an apparent mismatch by checking a different paper against this
+  (2012) citation -- the 13 MPa / 227 K value used here is correct for the
+  paper actually cited (quoted verbatim above; re-checked 2026-11-19).
 
-* Mishima (2010) anchor point (223 K, 50 MPa): CONFIRMED against the
-  original paper (Mishima, "Volume of supercooled water under pressure and
-  the liquid-liquid critical point", J. Chem. Phys. 133, 144503, 2010) by
-  the author. That paper reports
+* Mishima (2010) point (223 K, 50 MPa): checked 2026-11-19 against the
+  author-hosted PDF of the original paper (Mishima, "Volume of supercooled
+  water under pressure and the liquid-liquid critical point", J. Chem. Phys.
+  133, 144503, 2010; text extraction, page numbers approximate). The value
+  is an ASSUMED / roughly suggested liquid-liquid critical-point location
+  (abstract; Sec. V; Conclusion), not a measured value and not a Widom-line
+  or kappa_T-maximum location; no numerical uncertainty is given. That paper reports
   volume measurements on emulsified water samples over ~200-275 K and
   ~40-400 MPa, finds a slight downward curvature in volume-vs-temperature
   above ~200 MPa consistent with the liquid-liquid critical point
@@ -63,7 +67,7 @@ Provenance / review notes (please read before citing the printed numbers)
   and shows that assuming a critical point at about 50 MPa and 223 K lets
   the experimental volumes and derived compressibility be described
   qualitatively by a modified Fuentevilla-Anisimov scaling equation. The
-  223 K / 50 MPa anchor point used here matches this directly.
+  223 K / 50 MPa value used here is that assumed critical-point location.
 """
 
 import argparse
@@ -194,7 +198,7 @@ def check_tmd():
 def check_widom():
     print()
     print("=" * 72)
-    print("2. Widom-line (fluctuation-maximum) vs. independent literature anchors")
+    print("2. Widom-line (fluctuation-maximum) vs. literature anchors")
     print("=" * 72)
     with open(ANCHOR_FILE) as f:
         anchors = [(a["P_MPa"], a["T_K"], a["label"]) for a in json.load(f)["anchors"]]
@@ -205,11 +209,12 @@ def check_widom():
         d = T_mod - T_lit
         max_abs_diff = max(max_abs_diff, abs(d))
         print(f"{P:8.1f} {T_lit:9.1f} {T_mod:10.2f} {d:+9.2f}  {src}")
-    print(f"\nMax |diff| across the 3 independent anchors: {max_abs_diff:.2f} K")
+    print(f"\nMax |diff| across the 3 literature anchors: {max_abs_diff:.2f} K")
     print("(Authoritative value: state 'within 0.4 K', not 'within 0.3 K' --")
     print(" the Holten & Anisimov anchor point alone differs by ~0.36 K.)")
-    print("The Mishima (2010) anchor (223.0 K @ 50 MPa) has been confirmed by")
-    print("the author directly against the original paper.")
+    print("Note: the Mishima (2010) value (223.0 K @ 50 MPa) is an assumed liquid-liquid")
+    print("critical-point location, not a measured Widom maximum; the comparison is a loose")
+    print("consistency check, not an independent validation (see docs/PROVENANCE.md).")
     return max_abs_diff
 
 
@@ -278,7 +283,7 @@ def check_four_lines():
 
 def check_absolute_magnitude():
     """model_final.rho(T,P) is expressed in g/cm^3 (Vm_LDL0 = 1/0.930 etc. are
-    molar volumes in cm^3/g-equivalent units), NOT kg/m^3. A naive comparison
+    specific volumes in cm^3/g), NOT kg/m^3. A naive comparison
     of rho(T,P) directly against iapws' kg/m^3 output (without the x1000
     conversion) looks like a ~980x discrepancy, but is actually a unit
     mismatch, not a model error. This check applies the correct conversion
@@ -322,9 +327,9 @@ def check_absolute_magnitude():
     print(f"Cp absolute-value RMS error: {cp_rms_pct:.2f}%")
     print("(This is NOT the ~982x discrepancy an external reviewer reported;")
     print(" that figure came from comparing g/cm^3 to kg/m^3 without the x1000")
-    print(" conversion. The genuine absolute-magnitude agreement is ~1-2% for")
-    print(" density and a few percent for Cp -- still only a rough, not")
-    print(" independently-fitted, absolute calibration; see report limitations.)")
+    print(" conversion. The measured absolute-magnitude RMS deviations are")
+    print(" about 1.2% for density and about 8.0% for Cp (printed above) --")
+    print(" a rough, not independently-fitted, absolute calibration; see report limitations.)")
     return rho_rms_pct, cp_rms_pct
 
 

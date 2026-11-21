@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "water-two-state-core: verification code and numerical results"
+type: software
+authors:
+  - family-names: "Sendo"
+    given-names: "Hazime"
+    orcid: "https://orcid.org/0009-0007-3285-0308"
+# version / doi below refer to the published, archived release v1.1.1.
+# To be updated by the author when a later release (e.g. v1.1.2) is made and archived.
+version: "1.1.1"
+doi: "10.5281/zenodo.24210776"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23199719"
+    description: "Zenodo concept DOI (all versions)"
+repository-code: "https://github.com/Hazime-Sendo/water-two-state-core"
+license: Apache-2.0
+keywords:
+  - supercooled water
+  - two-state model
+  - anomaly lines
+  - verification

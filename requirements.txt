@@ -1,5 +1,6 @@
-# Versions used to generate results/ (Python 3.11). Newer minor versions should
-# work, but the committed numbers were produced with exactly these.
+# Versions used to generate results/ (Python 3.13.18). Other versions are untested; the
+# committed numbers were produced with exactly these.
 numpy==2.4.4
 scipy==1.17.1
 iapws==1.5.5
+# Optional, only for scripts/make_figure1.py (not needed for any check): matplotlib==3.11.2

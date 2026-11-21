@@ -1,11 +1,11 @@
 {
-  "_comment": "Independent literature estimates of the structural-fluctuation (Widom-line) maximum. None were used in fitting the density line.",
+  "_comment": "Literature reference temperatures (not all are measured Widom maxima: Kim 2017 = apparent kappa_T maximum inferred from S(0); Holten & Anisimov 2012 = candidate critical point; Mishima 2010 = assumed liquid-liquid critical-point location). Role of these points in the original parameter selection is not documented; see docs/PROVENANCE.md. They are reported here as literature comparison values, not as independent out-of-fit validation.",
   "anchors": [
-    {"P_MPa": 0.1,  "T_K": 229.0, "label": "Kim et al. 2017 (Science, ultrafast X-ray scattering)",
+    {"P_MPa": 0.1,  "T_K": 229.0, "label": "Kim et al. 2017 (apparent kappa_T maximum, X-ray scattering)",
      "reference": "K. H. Kim et al., Science 358, 1589 (2017)"},
-    {"P_MPa": 13.0, "T_K": 227.0, "label": "Holten & Anisimov 2012 (liquid-liquid critical point)",
+    {"P_MPa": 13.0, "T_K": 227.0, "label": "Holten & Anisimov 2012 (candidate liquid-liquid critical point)",
      "reference": "V. Holten and M. A. Anisimov, Sci. Rep. 2, 713 (2012)"},
-    {"P_MPa": 50.0, "T_K": 223.0, "label": "Mishima 2010 (compressibility extrapolation)",
+    {"P_MPa": 50.0, "T_K": 223.0, "label": "Mishima 2010 (assumed liquid-liquid critical-point location)",
      "reference": "O. Mishima, J. Chem. Phys. 133, 144503 (2010)"}
   ]
 }

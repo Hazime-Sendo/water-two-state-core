@@ -19,18 +19,19 @@ RMS deviation over 0-100 MPa: 0.636 K
  draft figure of 0.622 K or 0.65 K.)
 
 ========================================================================
-2. Widom-line (fluctuation-maximum) vs. independent literature anchors
+2. Widom-line (fluctuation-maximum) vs. literature anchors
 ========================================================================
  P (MPa)   Lit (K)  Model (K)  diff (K)  Source
-     0.1     229.0     228.96     -0.04  Kim et al. 2017 (Science, ultrafast X-ray scattering)
-    13.0     227.0     227.36     +0.36  Holten & Anisimov 2012 (liquid-liquid critical point)
-    50.0     223.0     222.82     -0.18  Mishima 2010 (compressibility extrapolation)
+     0.1     229.0     228.96     -0.04  Kim et al. 2017 (apparent kappa_T maximum, X-ray scattering)
+    13.0     227.0     227.36     +0.36  Holten & Anisimov 2012 (candidate liquid-liquid critical point)
+    50.0     223.0     222.82     -0.18  Mishima 2010 (assumed liquid-liquid critical-point location)
 
-Max |diff| across the 3 independent anchors: 0.36 K
+Max |diff| across the 3 literature anchors: 0.36 K
 (Authoritative value: state 'within 0.4 K', not 'within 0.3 K' --
  the Holten & Anisimov anchor point alone differs by ~0.36 K.)
-The Mishima (2010) anchor (223.0 K @ 50 MPa) has been confirmed by
-the author directly against the original paper.
+Note: the Mishima (2010) value (223.0 K @ 50 MPa) is an assumed liquid-liquid
+critical-point location, not a measured Widom maximum; the comparison is a loose
+consistency check, not an independent validation (see docs/PROVENANCE.md).
 
 ========================================================================
 3. Thermodynamic stability scan: kappa_T > 0 and Cp > 0 everywhere
@@ -78,9 +79,9 @@ Density absolute-value RMS error (correctly unit-converted): 1.23%
 Cp absolute-value RMS error: 7.97%
 (This is NOT the ~982x discrepancy an external reviewer reported;
  that figure came from comparing g/cm^3 to kg/m^3 without the x1000
- conversion. The genuine absolute-magnitude agreement is ~1-2% for
- density and a few percent for Cp -- still only a rough, not
- independently-fitted, absolute calibration; see report limitations.)
+ conversion. The measured absolute-magnitude RMS deviations are
+ about 1.2% for density and about 8.0% for Cp (printed above) --
+ a rough, not independently-fitted, absolute calibration; see report limitations.)
 
 ========================================================================
 6. kappa_S boundary (anomaly death line), scan T = 260-300 K
